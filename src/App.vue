@@ -1,56 +1,45 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
-      <ApolloExample />
+  <v-app id="welcome">
+    <nav-bar v-if="auth"></nav-bar>
+    <!-- Sizes your content based upon application components -->
+    <v-content id="container">
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <router-view></router-view>
+      </v-container>
     </v-content>
+
+    <v-footer app>FOOTER</v-footer>
   </v-app>
 </template>
 
 <script>
-import ApolloExample from "./components/ApolloExample";
-
+import NavBar from "./components/shared/header/NavBar";
 export default {
   name: "App",
 
   components: {
-    ApolloExample
+    "nav-bar": NavBar
   },
-
-  data: () => ({
-    //
-  })
+  computed: {
+    auth() {
+      return this.$store.getters.isAuthenticated;
+    }
+  }
 };
 </script>
+
+<style scoped>
+#container {
+  background-color: #fafafa;
+}
+
+#welcome {
+  background-image: url("./assets/welcome.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+</style> scoped>
+
