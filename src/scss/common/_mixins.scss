@@ -1,0 +1,50 @@
+@mixin clearfix() {
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin overlay($offset: 0) {
+  position: absolute;
+  bottom: $offset;
+  left: $offset;
+  right: $offset;
+  top: $offset;
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    cursor: pointer;
+    -webkit-border-radius: 1ex;
+    border-radius: 1ex;
+    border: none;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: $backgroundColor;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+
+}

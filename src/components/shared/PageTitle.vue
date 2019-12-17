@@ -1,8 +1,8 @@
 <template>
   <div class="page-title">
-    <v-icon class="page-icon" large left>{{icon}}</v-icon>
-    <span class="title">{{label}}</span>
-    <span v-if="data">({{data}})</span>
+    <v-icon class="page-icon" large left>{{ icon }}</v-icon>
+    <span class="">{{ label }}</span>
+    <span v-if="data">({{ data }})</span>
   </div>
 </template>
 
@@ -14,14 +14,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
+@import "../../scss/themes/variables";
 .page-icon {
   position: relative;
   top: -3px;
 }
 .page-title {
-  padding: 15px 15px 0px 25px;
-  color: #82af13;
-  font-size: 25px;
+  color: $color1;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 </style>

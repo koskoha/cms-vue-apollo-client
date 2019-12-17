@@ -1,10 +1,16 @@
 <template>
-  <div>
-    <employees-actions-bar :search.sync="search"></employees-actions-bar>
-    <v-card>
-      <v-data-table :headers="headers" :items="employees" :search="search"></v-data-table>
-    </v-card>
-  </div>
+  <v-content>
+    <v-container>
+      <employees-actions-bar :search.sync="search"></employees-actions-bar>
+      <v-card>
+        <v-data-table
+          :headers="headers"
+          :items="employees"
+          :search="search"
+        ></v-data-table>
+      </v-card>
+    </v-container>
+  </v-content>
 </template>
 
 <script>

@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <page-title :icon="'group'" :label="'Employees'"></page-title>
-    <router-view :employees="employees"></router-view>
-  </div>
+  <v-content>
+    <v-container>
+      <page-title :icon="'group'" :label="'Employees'"></page-title>
+      <div class="page-content-section">
+        <router-view :employees="employees"></router-view>
+      </div>
+    </v-container>
+  </v-content>
 </template>
 
 <script>

@@ -6,8 +6,12 @@ import vuetify from "./plugins/vuetify";
 import ApolloClient from "apollo-boost";
 import VueApollo from "vue-apollo";
 import FormAlert from "./components/shared/FormAlert";
+import VueFormGenerator from "vue-form-generator";
+import "vue-form-generator/dist/vfg.css";
+import "./scss/style.scss";
 
 Vue.use(VueApollo);
+Vue.use(VueFormGenerator);
 
 // Register Global Component
 Vue.component("form-alert", FormAlert);

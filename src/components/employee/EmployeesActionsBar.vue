@@ -12,7 +12,14 @@
       @keyup="updateValue"
     >
       <template v-slot:append-outer>
-        <v-btn small tile outlined color="#82af13" to="employees/new" class="add">
+        <v-btn
+          small
+          tile
+          outlined
+          color="#82af13"
+          to="employees/new"
+          class="add"
+        >
           <v-icon left>add</v-icon>Add Employee
         </v-btn>
       </template>
